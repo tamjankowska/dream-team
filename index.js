@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
-const session = require("express-session")
+const Game = require('./models/schemas/games')
 
 require('dotenv').config();
 
@@ -26,6 +26,20 @@ app.get('/', (req, res) => {
         req.session.views += 1;
     }
     res.status(200).send({'testing': 'worked', 'views': req.session.views});
+});
+
+app.get('/games', (req, res) => {
+    Game.find({}, (err, games) => {
+        res.status(200).send(games)
+    });
+});
+
+app.post("/games", (req, res) => {
+    const title = req.body.title;
+    const category = req.body.category;
+    new Game({ title, category }).save((err, result) => {
+        res.status(200).send({ status: "testing", result });
+    });
 });
 
 app.listen(5000, () => {
