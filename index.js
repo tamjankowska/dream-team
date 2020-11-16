@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const app = express();
 
 require('dotenv').config();
@@ -13,11 +14,17 @@ mongoose.connect(process.env.mongoConnectionString, {
 })
 
 app.use(cors());
+app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.status(200).send({'testing': 'worked'});
+    if(!req.session.views) {
+        req.session.views = 1;
+    } else {
+        req.session.views += 1;
+    }
+    res.status(200).send({'testing': 'worked', 'views': req.session.views});
 });
 
 app.listen(5000, () => {
