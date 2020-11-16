@@ -1,0 +1,32 @@
+{
+  "name": "dream-team",
+  "version": "1.0.0",
+  "description": "A MERN (Mongo, Express, React, Node) video game review app for uninformed parents!",
+  "main": "index.js",
+  "scripts": {
+    "backend": "nodemon index.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "bootstrap": "npm install -d && cd frontend && npm install -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamjankowska/dream-team.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamjankowska/dream-team/issues"
+  },
+  "homepage": "https://github.com/tamjankowska/dream-team#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
