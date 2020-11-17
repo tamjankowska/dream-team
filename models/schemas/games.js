@@ -10,39 +10,39 @@ const gameSchema = new mongoose.Schema({
     },
     ageRating: {
         type: String,
-        required: false
+        required: true
     },
     violence: {
         type: String,
-        required: false,
+        required: true
     },
     sexAndNudity: {
         type: String,
-        required: false,
+        required: true
     },
     alcoholAndDrugs: {
         type: String,
-        required: false,
+        required: true
     },
     gambling: {
         type: String,
-        required: false,
+        required: true
     },
     explicitLanguage: {
         type: String,
-        required: false,
+        required: true
     },
     averageScore: {
         type: String,
-        required: false,
+        required: true
     },
     publisher: {
         type: String,
-        required: false,
+        required: true
     },
     releaseDate: {
         type: Date,
-        required: false,
+        required: true
     }
 });
 module.exports = mongoose.model('Games', gameSchema); // Database name

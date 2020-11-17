@@ -38,7 +38,7 @@ app.post("/games", (req, res) => {
     const title = req.body.title;
     const category = req.body.category;
     new Game({ title, category }).save((err, result) => {
-        res.status(200).send({ status: "testing", result });
+        res.status(200).send({ status: result });
     });
 });
 
