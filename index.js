@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
-const session = require("express-session")
 
 require('dotenv').config();
 
@@ -26,6 +25,13 @@ app.get('/', (req, res) => {
         req.session.views += 1;
     }
     res.status(200).send({'testing': 'worked', 'views': req.session.views});
+});
+
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
+app.post("/signup", (req,res) => {
+    res.status(200).send({"username": req.body.username});
 });
 
 app.listen(5000, () => {
