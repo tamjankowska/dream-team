@@ -37,7 +37,26 @@ app.get('/games', (req, res) => {
 app.post("/games", (req, res) => {
     const title = req.body.title;
     const category = req.body.category;
-    new Game({ title, category }).save((err, result) => {
+    const ageRating = req.body.ageRating;
+    const violence = req.body.violence;
+    const sexAndNudity = req.body.sexAndNudity;
+    const alcoholAndDrugs = req.body.alcoholAndDrugs;
+    const gambling = req.body.gambling;
+    const explicitLanguage = req.body.explicitLanguage;
+    const averageScore = req.body.averageScore;
+    const publisher = req.body.publisher;
+    const releaseDate = req.body.releaseDate;
+    new Game({ title, 
+        category, 
+        ageRating, 
+        violence, 
+        sexAndNudity, 
+        alcoholAndDrugs, 
+        gambling, 
+        explicitLanguage,
+        averageScore,
+        publisher,
+        releaseDate}).save((err, result) => {
         res.status(200).send({ status: result });
     });
 });

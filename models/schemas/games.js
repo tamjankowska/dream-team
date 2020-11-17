@@ -9,31 +9,31 @@ const gameSchema = new mongoose.Schema({
         required: true
     },
     ageRating: {
-        type: String,
-        required: true
+        type: Number,
+        required: Number
     },
     violence: {
-        type: String,
+        type: Number,
         required: true
     },
     sexAndNudity: {
-        type: String,
+        type: Number,
         required: true
     },
     alcoholAndDrugs: {
-        type: String,
+        type: Number,
         required: true
     },
     gambling: {
-        type: String,
+        type: Number,
         required: true
     },
     explicitLanguage: {
-        type: String,
+        type: Number,
         required: true
     },
     averageScore: {
-        type: String,
+        type: Number,
         required: true
     },
     publisher: {
