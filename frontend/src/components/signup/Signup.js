@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './Signup.css';
 const Signup = () => {
     const [username, setUser] = useState("");
     const [email, setEmail] = useState("");
@@ -32,8 +32,7 @@ const Signup = () => {
     return (
         <div className="signup">
             <h1>Sign Up</h1>
-            <form onSubmit={getResponse}>
-                <ul>
+            <form onSubmit={getResponse} className="signup-form">
                     <label htmlFor="username">Create a username</label>
                     <input id="username" type="text" name="username" placeholder="username" onChange={onChangeHandler}></input>
 
@@ -48,7 +47,6 @@ const Signup = () => {
 
 
                     <input type="submit" value="submit"></input>
-                </ul>
             </form>
         </div>
     );
