@@ -5,6 +5,9 @@ const session = require('express-session');
 const app = express();
 const Game = require('./models/schemas/games')
 
+const Game = require('./models/schemas/games');
+const User = require('./models/schemas/users');
+
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -67,6 +70,34 @@ app.post("/signup", (req,res) => {
     res.status(200).send({"username": req.body.username});
 });
 
+app.get('/games', (req, res) => {
+    Game.find({}, (err, games) => {
+        res.status(200).send(games)
+    });
+});
+
+app.post("/games", (req, res) => {
+    const title = req.body.title;
+    const category = req.body.category;
+    new Game({ title, category }).save((err, result) => {
+        res.status(200).send({ status: "testing", result });
+    });
+});
+
+app.get('/users', (req, res) => {
+    User.find({}, (err, users) => {
+        res.status(200).send(users)
+    });
+});
+
+app.post('/users', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const reviewer = req.body.reviewer;
+    new User({ username, password, reviewer}).save((err, result) => {
+        res.status(200).send({ status: 'testing', result })
+    });
+});
 app.listen(5000, () => {
     console.log('App is online.');
 });
