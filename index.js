@@ -59,6 +59,12 @@ app.post("/games", (req, res) => {
         releaseDate}).save((err, result) => {
         res.status(200).send({ status: result });
     });
+
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
+app.post("/signup", (req,res) => {
+    res.status(200).send({"username": req.body.username});
 });
 
 app.listen(5000, () => {
