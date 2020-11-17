@@ -8,7 +8,8 @@ const Navbar = () => {
     return (
         <nav>
             <img className="logo" src={Eggicorn} />
-            <h2>Games</h2>
+            <h2 className="categories-dropdown">Categories(dropdown)</h2>
+            
             <div className="search">
                 <input className="search-bar" type="text" placeholder="🔍  Search" />
             </div>

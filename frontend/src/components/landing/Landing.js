@@ -1,15 +1,16 @@
 import React, { useState} from "react";
 import './Landing.css';
-import {Redirect} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 function Landing() {
-    const [loginStatus, setLoginStatus] = useState(null);
+    let history = useHistory();
+    const [loginStatus, setLoginStatus] = useState(false);
 
     const onSubmit = (event) => {
         event.preventDefault();
         if (loginStatus === true) {
             //will redirect here
         } else if (loginStatus === false) {
-            return <Redirect to="/signup" />
+            history.push("/signup")
         }
     }
 
@@ -25,6 +26,7 @@ function Landing() {
                 <input id="password-input" type="password" name="password" placeholder="Password"></input>
 
                 <input id="submit-login" type="submit" value="Log In"></input>
+                
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>
             
