@@ -59,7 +59,6 @@ app.post("/games", (req, res) => {
         res.status(200).send({ status: result });
     });
 });
-
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
