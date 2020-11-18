@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+const session = require("express-session");
 const app = express();
 const Game = require('./models/schemas/games')
 
-require('dotenv').config();
+require("dotenv").config();
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 mongoose.connect(process.env.mongoConnectionString, {
     useNewUrlParser: true,
