@@ -3,11 +3,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require("express-session");
 const app = express();
-const Game = require('./models/schemas/games')
+const mongoose = require('mongoose');
+
+const indexRouter = require('./routes/indexRouter');
+const gamesRouter = require('./routes/gamesRouter');
+const usersRouter = require('./routes/usersRouter');
+const signupRouter = require('./routes/signupRouter');
 
 require("dotenv").config();
-
-const mongoose = require("mongoose");
 
 mongoose.connect(process.env.mongoConnectionString, {
     useNewUrlParser: true,
@@ -19,14 +22,10 @@ app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    if(!req.session.views) {
-        req.session.views = 1;
-    } else {
-        req.session.views += 1;
-    }
-    res.status(200).send({'testing': 'worked', 'views': req.session.views});
-});
+app.use('/', indexRouter);
+app.use('/games', gamesRouter);
+app.use('/users', usersRouter);
+app.use('/signup', signupRouter);
 
 app.get('/games', (req, res) => {
     Game.find({}, (err, games) => {
@@ -59,6 +58,7 @@ app.post("/games", (req, res) => {
         releaseDate}).save((err, result) => {
         res.status(200).send({ status: result });
     });
+});
 
 app.get("/signup", (req, res) => {
     res.render("signup");
