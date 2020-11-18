@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './GamesBanner.css';
 import BannerImage from '../bannerimage/BannerImage';
 // import axios from 'axios';
 import Lightbox from 'react-image-lightbox';
@@ -42,8 +43,8 @@ class GamesBanner extends React.Component {
         const { photoIndex, isOpen } = this.state;
 
         return (
-            <div className="main-stories-container">
-                <div className="stories-container">
+            <div className="games-banner-container">
+                <div className="games-container">
                     <button className="stories-button" type="button" onClick={() => this.setState({
                         isOpen: true
                     })}>                    
