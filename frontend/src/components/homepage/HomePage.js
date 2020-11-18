@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import axios from 'axios';
+
 import spiderman from '../images/spiderman.jpg';
 import demonsSouls from '../images/demonsSouls.jpg';
 import fifa21 from '../images/fifa21.jpg';

@@ -10,7 +10,7 @@ const gamesRouter = require('./routes/gamesRouter');
 const usersRouter = require('./routes/usersRouter');
 const signupRouter = require('./routes/signupRouter');
 
-require('dotenv').config();
+require("dotenv").config();
 
 mongoose.connect(process.env.mongoConnectionString, {
     useNewUrlParser: true,
