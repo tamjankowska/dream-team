@@ -9,40 +9,40 @@ const gameSchema = new mongoose.Schema({
         required: true
     },
     ageRating: {
-        type: String,
-        required: false
+        type: Number,
+        required: Number
     },
     violence: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     sexAndNudity: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     alcoholAndDrugs: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     gambling: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     explicitLanguage: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     averageScore: {
-        type: String,
-        required: false,
+        type: Number,
+        required: true
     },
     publisher: {
         type: String,
-        required: false,
+        required: true
     },
     releaseDate: {
         type: Date,
-        required: false,
+        required: true
     }
 });
 module.exports = mongoose.model('Games', gameSchema); // Database name
