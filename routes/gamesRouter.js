@@ -31,8 +31,8 @@ router.get('/id/:id', (req, res) => {
     });
 });
 
-router.get('/category/:category', (req, res) => {
-    Game.find({category: req.params.category}, (err, game) => {
+router.get('/:field/:value', (req, res) => {
+    Game.find({[req.params.field]: req.params.value}, (err, game) => {
         if (err) {
             console.log(err);
             res.status(404).json({err});
