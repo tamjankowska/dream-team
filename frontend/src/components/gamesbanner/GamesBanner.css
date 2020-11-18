@@ -1,0 +1,10 @@
+.games-banner-container {
+    display: flex;
+    width: 100%;
+}
+.games-container {
+    display: flex;
+}
+.image-frame {
+    display: flex;
+}
