@@ -14,17 +14,17 @@ const Navbar = () => {
 
     return (
         <nav>
-            <img className="logo" src={Eggicorn} />
-            <Dropdown />
+            <div className="logo-dropdown">
+                <img className="logo" src={Eggicorn} />
+                <Dropdown />
+            </div>
             <div className="search">
                 <input className="search-bar" type="text" placeholder="🔍  Search" />
             </div>
             <div className="navbar-user">
-            
                 <img src={Karen} className="nav-user-img"></img>
-                <h3>KoncernedKaren</h3>
+                <h3>UsernameData</h3>
             </div>
-            
         </nav>
     )
 }

@@ -7,7 +7,10 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <GamesBanner /> */}
+      <div className="navbar">
+        <Navbar />
+      </div>
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />

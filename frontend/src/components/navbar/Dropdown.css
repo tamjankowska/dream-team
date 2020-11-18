@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-
+.search-categories{
+    padding-left: 10%;
+}
 /* class applies to select element itself, not a wrapper element */
 .select-css {
     display: block;
@@ -64,6 +66,3 @@
     border: 1px outset rgba(80, 63, 80, 0.25)
 }
 
-body {
-    margin: 2rem;
-}

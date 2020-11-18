@@ -7,14 +7,16 @@
 nav {
     background-color: rgb(45, 42, 60);
     display: flex;
-    justify-content: space-around; 
-    padding-top: 1%;
-    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 1903px;
+    max-width: 1903px;
     height: 200px;
     color: white;
 }
 
-h2 {
+/* h2 {
     display: flex;
     flex-wrap: wrap;
     color: rgb(255, 255, 255); 
@@ -25,6 +27,11 @@ h2 {
     background-color: rgb(174, 152, 174); 
     border: 2px outset rgba(80, 63, 80, 0.25); 
     border-radius: 12px;
+} */
+
+.logo-dropdown{
+    display: flex;
+    align-items: center;
 }
 
 .search-bar{
@@ -33,27 +40,25 @@ h2 {
     color: white;
     width: 200px;
     height: 25px;
-    margin-top: 20%;
     text-align: center;
 }
 .search-bar:focus{
     text-align: left;
 }.search{
     text-align: center;
-    padding: 0%; 
+    padding-left: 45%; 
 }
 .logo {
+    display: flex;
     position: center;
     width: 150px;
     height: 180px;
 }
 
 .navbar-user{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    width: 100%;
 }
 .nav-user-img {
-    height: 50%;
-    width: 50%;
+    height: 5%;
+    width: 5%;
 }
