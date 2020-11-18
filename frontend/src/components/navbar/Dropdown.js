@@ -1,53 +1,28 @@
-import React, {useState}  from 'react'
+import React from "react";
+import axios from "axios"
 import "./Dropdown.css"
 
-function Dropdown() {
+const Categories = () => {
+
+
     return (
-        <Navvy>        
-            <NavvyItem icon="Category" >
-                <DroppyMenu />
-            </NavvyItem>
-        </Navvy>
-    );
-}
-function DroppyMenu() {
-    function DroppyItem(props){
-        return (
-            <a href="#" className="menu-item">
-                {props.children}
-            </a>
-        )
-    }
-    return (
-        <div className="dropdown">
-            <DroppyItem>Horror Games</DroppyItem>
-            <DroppyItem>Action Games</DroppyItem>
-            <DroppyItem>Other Games</DroppyItem>
-            <DroppyItem>Random Games</DroppyItem>
+        <div className="search-categories">
+            <div className="select">                
+                <select  class="select-css" name="search_categories" id="search_categories">
+                    <option value="" disabled selected>Categories</option>
+                    <option className="dropdown-item" value="horror">Horror games</option>
+                    <option className="dropdown-item" value="Happy">Happy games</option>
+                    <option className="dropdown-item" value="Sad">Sad games</option>
+                    <option className="dropdown-item" value="Weird">Weird games</option>
+                </select>
+            </div>
         </div>
+
     )
 }
 
-function Navvy(props) {
-    return (
-        <nav className="navbar">
-            <ul className="navbar-nav"> {props.children}</ul>
-        </nav>
-    )
-}
 
-function NavvyItem(props) {
 
-    const [open, setOpen] = useState(false);
 
-    return (
-        <li className="nav-item">
-            <a href="#" className="icon-button" onClick={()=> setOpen(!open)}>
-                {props.icon}
-            </a>
-            {open && props.children}
-        </li>
-    )
-}
 
-export default Dropdown;
+export default Categories;
