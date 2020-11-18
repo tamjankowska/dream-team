@@ -27,6 +27,46 @@ app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 
+app.get('/games', (req, res) => {
+    Game.find({}, (err, games) => {
+        res.status(200).send(games)
+    });
+});
+
+app.post("/games", (req, res) => {
+    const title = req.body.title;
+    const category = req.body.category;
+    const ageRating = req.body.ageRating;
+    const violence = req.body.violence;
+    const sexAndNudity = req.body.sexAndNudity;
+    const alcoholAndDrugs = req.body.alcoholAndDrugs;
+    const gambling = req.body.gambling;
+    const explicitLanguage = req.body.explicitLanguage;
+    const averageScore = req.body.averageScore;
+    const publisher = req.body.publisher;
+    const releaseDate = req.body.releaseDate;
+    new Game({ title, 
+        category, 
+        ageRating, 
+        violence, 
+        sexAndNudity, 
+        alcoholAndDrugs, 
+        gambling, 
+        explicitLanguage,
+        averageScore,
+        publisher,
+        releaseDate}).save((err, result) => {
+        res.status(200).send({ status: result });
+    });
+});
+
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
+app.post("/signup", (req,res) => {
+    res.status(200).send({"username": req.body.username});
+});
+
 app.listen(5000, () => {
     console.log('App is online.');
 });
