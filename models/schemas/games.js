@@ -11,7 +11,7 @@ const gameSchema = new mongoose.Schema({
     },
     ageRating: {
         type: Number,
-        required: Number
+        required: true
     },
     violence: {
         type: Number,

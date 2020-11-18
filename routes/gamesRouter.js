@@ -107,13 +107,13 @@ router.get('/id/:id', (req, res) => {
     });
 });
 
-router.delete('/delete', (req, res) => {
-    Game.findByIdAndDelete({_id: req.params.id}, (err, game) => {
+router.delete('/id/:id', (req, res) => {
+    Game.findOneAndDelete({_id: req.params.id}, (err, game) => {
         if (err) {
             console.log(err);
             res.status(404).json({err: `The game '${req.params.id}' you are trying to delete does not exist!`});
         } else {
-            res.status(204).json(game);
+            res.status(200).json({game, msg: `${req.params.id} has been deleted`});
         }
     });
 });
