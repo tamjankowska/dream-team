@@ -19,12 +19,6 @@ const Signup = () => {
         })
     };
 
-
-    const clearData = () => {
-        console.log('Clearing');
-        setData('');
-    };
-
     const onChangeHandler = (event) => {
         if (event.target.id === "username") {
             setUser(event.target.value)
