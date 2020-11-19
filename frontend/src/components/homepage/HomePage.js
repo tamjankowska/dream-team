@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import GamesBanner from '../gamesbanner/GamesBanner';
 import spiderman from '../images/spiderman.jpg';
 import demonsSouls from '../images/demonsSouls.jpg';
 import fifa21 from '../images/fifa21.jpg';
@@ -39,10 +40,11 @@ class HomePage extends Component {
         this.getDetails = this.getDetails.bind(this);
     }
 componentDidMount() {
-    axios.get(process.env.mongoConnectionString)
+    axios.get('http://localhost:5000/games')
     .then((res) => {
+      console.log(res.data)
         this.setState({
-            gameData: res.gameData
+            gameData: res.data
         });
     });
 }
@@ -56,7 +58,7 @@ getDetails() {
     render() {
         return (
           <div>
-            {/* <GamesBanner /> */}
+            <GamesBanner />
             <button onClick={this.getDetails}>Click</button>
 
             {this.state.buttonClicked ? this.state.gameData.map((data) => {
