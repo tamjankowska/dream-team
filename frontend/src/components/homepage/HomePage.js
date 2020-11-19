@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import GamesCarousel from '../gamesbanner/GamesCarousel';
+import GamesCarousel from '../gamescarousel/GamesCarousel';
 
 class HomePage extends Component {
     constructor() {

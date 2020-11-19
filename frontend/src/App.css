@@ -1,4 +1,10 @@
 .navbar {
     max-width: 1903px;
-    position: static;
+    position: relative;
+}
+
+@media (max-width: 958px) {
+    .navbar{
+        max-width: 958px;
+    }
 }
