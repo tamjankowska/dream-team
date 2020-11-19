@@ -7,4 +7,5 @@
 }
 .image-frame {
     display: flex;
+    height: 20vh;
 }
