@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import axios from 'axios';
-
+import GamesBanner from '../gamesbanner/GamesBanner';
 import spiderman from '../images/spiderman.jpg';
 import demonsSouls from '../images/demonsSouls.jpg';
 import fifa21 from '../images/fifa21.jpg';
@@ -59,7 +59,7 @@ getDetails() {
     render() {
         return (
           <div>
-            {/* <GamesBanner /> */}
+            <GamesBanner />
             <button onClick={this.getDetails}>Click</button>
 
             {this.state.buttonClicked ? this.state.gameData.map((data) => {

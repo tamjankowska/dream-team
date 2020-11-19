@@ -4,22 +4,22 @@ import Landing from "./components/landing/Landing";
 import { BrowserRouter, Route } from 'react-router-dom';
 import Signup from "./components/signup/Signup";
 import Navbar from "./components/navbar/Navbar";
-import Homepage from "./components/homepage/HomePage";
-// import GamesBanner from './components/gamesbanner/GamesBanner';
+import HomePage from './components/homepage/HomePage';
+
+
 
 
 
 function App() {
   return (
     <div className="App">
-      {/* <GamesBanner /> */}
-      {/* <Signup />
+      {/* <Signup /> */}
       <Navbar />
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />
-      </BrowserRouter> */}
-      <Homepage />
+        <Route exact path="/homepage" component={HomePage} />
+      </BrowserRouter> 
     </div>
   );
 }

@@ -3,12 +3,12 @@ import './Landing.css';
 import {useHistory} from "react-router-dom"
 function Landing() {
     let history = useHistory();
-    const [loginStatus, setLoginStatus] = useState(false);
+    const [loginStatus, setLoginStatus] = useState(true);
 
     const onSubmit = (event) => {
         event.preventDefault();
         if (loginStatus === true) {
-            //will redirect here
+            history.push("/homepage")
         } else if (loginStatus === false) {
             history.push("/signup")
         }
