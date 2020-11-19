@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     },
     emailAddress: {
         type: String,
-        required: false
+        required: true
     },
     password: {
         type: String,
@@ -15,10 +15,6 @@ const userSchema = new mongoose.Schema({
     reviewer: {
         type: Boolean,
         required: true
-    },
-    profilePic: {
-        type: String,
-        required: false
     }
 });
 module.exports = mongoose.model('Users', userSchema); // Database name
