@@ -8,6 +8,7 @@ const Signup = (props) => {
             setData(res.data.testing);
         })
     };
+
     const clearData = () => {
         console.log('Clearing');
         setData('');
