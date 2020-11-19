@@ -1,5 +1,7 @@
 import React from "react";
 import Profilepic from "../navbar/img/reviewpp.png"
+import '../profile/Profile.css'
+import Dropdown from "../navbar/Dropdown"
 
 const Profile = () => {
 
@@ -8,14 +10,16 @@ const Profile = () => {
             <div className="profile-sidebar">
                 <div className="profile-sidebar-top">
                     <img src={Profilepic} alt="profileimg" className="profile-pic" />
-                    <p>username: Karenkaren</p>
-                    <p>email: karen@karne.com</p>
+                    <div className="profile-info">
+                        <p>username: Karenkaren</p>
+                        <p>email: karen@karne.com</p>
+                    </div>
                 </div>
-                <p>Categories</p>
+                <Dropdown />
             </div>
             <div className="profile-main">
                 <h2 className="review-title">Your reviews</h2>
-                <p>review carrosel</p>
+                <p>Review carrosel</p>
             </div>
         </div>
     );
