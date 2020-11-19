@@ -64,7 +64,7 @@ router.get('/id/:id', (req, res) => {
     });
 });
 
-router.delete('id/:id', (req, res) => {
+router.delete('/id/:id', (req, res) => {
     User.findOneAndDelete({_id: req.params.id}, (err, user) => {
         if (err) {
             console.log(err);
@@ -77,7 +77,7 @@ router.delete('id/:id', (req, res) => {
 
 router.get('/:field/:value', (req, res) => {
     User.find({[req.params.field]: req.params.value}, (err, user) => {
-        if (req.params.field = 'password') {
+        if ([req.params.field] == 'password') {
             res.status(403).json({msg: `It is not possible to find a user via their password, please use alternative search criteria.`});
         } else if (err) {
             console.log(err);
