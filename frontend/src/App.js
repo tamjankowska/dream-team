@@ -13,8 +13,10 @@ import HomePage from './components/homepage/HomePage';
 function App() {
   return (
     <div className="App">
-      {/* <Signup /> */}
       <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />

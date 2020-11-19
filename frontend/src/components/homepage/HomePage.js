@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import axios from 'axios';
 import GamesBanner from '../gamesbanner/GamesBanner';
 import spiderman from '../images/spiderman.jpg';
