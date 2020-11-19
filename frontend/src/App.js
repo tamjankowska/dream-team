@@ -15,7 +15,6 @@ import HomePage from './components/homepage/HomePage';
 function App() {
   return (
     <div className="App">
-      <GamesCarousel />
       <Signup />
       <div className="navbar">
         <Navbar />
