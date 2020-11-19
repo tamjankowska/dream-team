@@ -16,7 +16,9 @@ const Navbar = () => {
         <nav>
             <div className="logo-dropdown">
                 <img className="logo" src={Eggicorn} />
+                <p>Video Game review site for uninfored parents</p>
                 <Dropdown />
+                
             </div>
             <div className="search">
                 <input className="search-bar" type="text" placeholder="🔍  Search" />

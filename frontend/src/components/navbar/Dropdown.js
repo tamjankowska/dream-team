@@ -10,19 +10,16 @@ const Categories = () => {
             <div className="select">                
                 <select  class="select-css" name="search_categories" id="search_categories">
                     <option value="" disabled selected>Categories</option>
-                    <option className="dropdown-item" value="horror">Horror games</option>
-                    <option className="dropdown-item" value="Happy">Happy games</option>
-                    <option className="dropdown-item" value="Sad">Sad games</option>
-                    <option className="dropdown-item" value="Weird">Weird games</option>
+                    <option className="dropdown-item" value="horror">Shown from database</option>
+                    <option className="dropdown-item" value="Happy">Shown from database</option>
+                    {/* <optgroup label="horror">Horror</optgroup> */}
+                    <option className="dropdown-item" value="Sad">Shown from database</option>
+                    <option className="dropdown-item" value="Weird">Shown from database</option>
                 </select>
             </div>
         </div>
 
     )
 }
-
-
-
-
 
 export default Categories;

@@ -3,7 +3,6 @@
 * {
     font-family: "Arvo", sans-serif;
 }
-
 nav {
     background-color: rgb(45, 42, 60);
     display: flex;
@@ -16,24 +15,18 @@ nav {
     color: white;
 }
 
-/* h2 {
+/* Logo and dropdown */
+.logo {
     display: flex;
-    flex-wrap: wrap;
-    color: rgb(255, 255, 255); 
-    font-size: 20px;
-    height: 10%;
-    padding: 9px; 
-    margin: 10px;
-    background-color: rgb(174, 152, 174); 
-    border: 2px outset rgba(80, 63, 80, 0.25); 
-    border-radius: 12px;
-} */
-
+    width: 150px;
+    height: 180px;
+}
 .logo-dropdown{
     display: flex;
     align-items: center;
 }
 
+/* Searchbar */
 .search-bar{
     background-color: rgb(45, 42, 60);
     border: 1px solid rgb(134, 125, 179);
@@ -46,19 +39,13 @@ nav {
     text-align: left;
 }.search{
     text-align: center;
-    padding-left: 45%; 
-}
-.logo {
-    display: flex;
-    position: center;
-    width: 150px;
-    height: 180px;
 }
 
+/* User img and name */
 .navbar-user{
-    width: 100%;
+    flex-wrap: wrap;
 }
 .nav-user-img {
-    height: 5%;
-    width: 5%;
+    height: 25%;
+    width: 25%;
 }
