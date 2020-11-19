@@ -13,8 +13,9 @@ function App() {
   return (
     <div className="App">
       {/* <GamesBanner /> */}
-      {/* <Signup />
-      <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />

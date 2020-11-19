@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import axios from 'axios';
-
 import spiderman from '../images/spiderman.jpg';
 import demonsSouls from '../images/demonsSouls.jpg';
 import fifa21 from '../images/fifa21.jpg';
@@ -41,11 +39,10 @@ class HomePage extends Component {
         this.getDetails = this.getDetails.bind(this);
     }
 componentDidMount() {
-    axios.get('http://localhost:5000/games')
+    axios.get(process.env.mongoConnectionString)
     .then((res) => {
-      console.log(res.data)
         this.setState({
-            gameData: res.data
+            gameData: res.gameData
         });
     });
 }
