@@ -8,7 +8,7 @@ function Landing() {
     const onSubmit = (event) => {
         event.preventDefault();
         if (loginStatus === true) {
-            history.push("/homepage")
+            history.push("/home")
         } else if (loginStatus === false) {
             history.push("/signup")
         }

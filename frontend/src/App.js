@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/homepage" component={HomePage} />
+        <Route exact path="/home" component={HomePage} />
       </BrowserRouter> 
     </div>
   );

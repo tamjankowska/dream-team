@@ -33,7 +33,7 @@ app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
-app.use('/homepage',homepageRouter);
+app.use('/home',homepageRouter);
 
 app.listen(5000, () => {
     console.log('App is online.');
