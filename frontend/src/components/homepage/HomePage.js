@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import GamesBanner from '../gamesbanner/GamesBanner';
 import spiderman from '../images/spiderman.jpg';
 import demonsSouls from '../images/demonsSouls.jpg';
 import fifa21 from '../images/fifa21.jpg';
@@ -29,12 +31,53 @@ import guildWars2 from '../images/guildWars2.jpg';
 import bladeSoul from '../images/bladeSoul.jpg';
 
 class HomePage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            gameData: [],
+            buttonClicked: false
+        };
+        this.getDetails = this.getDetails.bind(this);
+    }
+componentDidMount() {
+    axios.get('http://localhost:5000/games')
+    .then((res) => {
+      console.log(res.data)
+        this.setState({
+            gameData: res.data
+        });
+    });
+}
+getDetails() {
+    if (!this.state.buttonClicked) {
+      this.setState({
+        buttonClicked: true
+      });
+    }
+  }
     render() {
         return (
-            <div>
-                <GamesBanner />
-            </div>
-        )
+          <div>
+            <GamesBanner />
+            <button onClick={this.getDetails}>Click</button>
+
+            {this.state.buttonClicked ? this.state.gameData.map((data) => {
+                  return (
+                    <React.Fragment>
+                      <p>
+                        {" "}
+                        <b>title</b> : {data.title}
+                      </p>
+                      <p>
+                        <b>category</b> : {data.category}
+                      </p>
+                      <hr />
+                    </React.Fragment>
+                  );
+                })
+              : null}
+          </div>
+        );
     }
 }
 
