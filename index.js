@@ -11,6 +11,7 @@ const usersRouter = require('./routes/usersRouter');
 const signupRouter = require('./routes/signupRouter');
 const homepageRouter = require('./routes/homepageRouter');
 const profileRouter = require('./routes/profileRouter');
+const faqRouter = require('./routes/faqRouter');
 
 require("dotenv").config();
 
@@ -36,6 +37,7 @@ app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 app.use('/home',homepageRouter);
 app.use('/profile', profileRouter);
+app.use('/faq', faqRouter);
 
 
 
