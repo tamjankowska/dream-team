@@ -5,7 +5,6 @@ import Eggicorn from "./img/eggicorn.png"
 import Karen from "./img/karen.png"
 import './Navbar.css';
 
-
 const Navbar = () => {
     const options = [
         'one', 'two', 'three'
@@ -15,7 +14,9 @@ const Navbar = () => {
     return (
         <nav>
             <div className="logo-dropdown">
-                <img className="logo" src={Eggicorn} />
+                <a href = '/home'>
+                    <img className="logo" src={Eggicorn} alt = "logo" />
+                </a>
                 <p>Video Game review site for uninfored parents</p>
                 <Dropdown />
                 
