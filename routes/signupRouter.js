@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get("/signup", (req, res) => {
+router.get("/", (req, res) => {
     res.render("signup");
 });
-router.post("/signup", (req,res) => {
+router.post("/", (req,res) => {
     res.status(200).send({"username": req.body.username});
 });
 
