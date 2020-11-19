@@ -8,10 +8,6 @@ import Homepage from "./components/homepage/HomePage";
 import Profile from "./components/profile/Profile"
 // import GamesBanner from './components/gamesbanner/GamesBanner';
 
-
-
-
-
 function App() {
   return (
     <div className="App">

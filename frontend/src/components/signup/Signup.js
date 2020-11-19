@@ -18,6 +18,7 @@ const Signup = () => {
             console.log(res.data)
         })
     };
+
     const onChangeHandler = (event) => {
         if (event.target.id === "username") {
             setUser(event.target.value)
@@ -29,6 +30,7 @@ const Signup = () => {
             setPasswordCheck(event.target.value)
         }
     }
+
     return (
         <div className="signup">
             <h1>Sign Up</h1>
