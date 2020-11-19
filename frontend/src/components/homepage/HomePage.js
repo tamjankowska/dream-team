@@ -41,10 +41,11 @@ class HomePage extends Component {
         this.getDetails = this.getDetails.bind(this);
     }
 componentDidMount() {
-    axios.get(process.env.mongoConnectionString)
+    axios.get('http://localhost:5000/games')
     .then((res) => {
+      console.log(res.data)
         this.setState({
-            gameData: res.gameData
+            gameData: res.data
         });
     });
 }
