@@ -3,20 +3,20 @@ import './Landing.css';
 import {useHistory} from "react-router-dom"
 function Landing() {
     let history = useHistory();
-    const [loginStatus, setLoginStatus] = useState(true);
+    const [loginStatus, setLoginStatus] = useState(false);
 
     const onSubmit = (event) => {
         event.preventDefault();
         if (loginStatus === true) {
             history.push("/home")
         } else if (loginStatus === false) {
-            history.push("/signup")
+            history.push("/profile")
         }
     }
 
     return (
         <div className="landing">
-            <h1>Log in</h1>
+            <h1 className="login-title">Log in</h1>
             <form onSubmit={onSubmit} className="logInForm">
 
                 <label htmlFor="email">Enter your username</label>
@@ -29,7 +29,7 @@ function Landing() {
                 
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>
-            
+            <button type="button" href="/profile"></button>
         </div>
     );
 }
