@@ -1,8 +1,11 @@
+/* Whole page under navbar */
 .whole-profile {
     display: flex;
     position: fixed;
     color: white;
 }
+
+/* Profile side bar */
 .profile-sidebar {
     font-size: 20px;
     display: flex;
@@ -13,24 +16,29 @@
     background-color: #503F50;
     padding-bottom: 100%;
 }
-
 .profile-pic{
     margin: 1%;
     padding: 1%;
+    margin-left: 25%;
     border: 3px solid #230608;
     width: 50%;
     background-color: black;
 }
-
 .profile-info {
     font-size: 20px;
 }
+.profile-dropdown {
+    margin-top: 10%;
+    margin-left: 15%;
+}
 
+/* Profile main area */
 .profile-main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    margin-left: 15%;
 }
 .review-title {
     max-width: 100%;

@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/add', (req, res) => {
+router.post('/signup', (req, res) => {
     const username = req.body.username;
     const emailAddress = req.body.emailAddress;
     const password = req.body.password;
@@ -57,6 +57,8 @@ router.get('/id/:id', (req, res) => {
     User.findOne({_id: req.params.id}, (err, user) => {
         if (err) {
             console.log(err);
+            res.status(500).json(err);
+        } else if (!user) {
             res.status(404).json({err: `The user ${req.params.id} does not exist!`});
         } else {
             res.status(200).json(user);
@@ -88,5 +90,23 @@ router.get('/:field/:value', (req, res) => {
     });
 });
 
+router.post('/login', async (req, res) => {
+    const {email, password} = req.body;
+    if (await User.checkPassword(email, password)) {
+        User.findOne({emailAddress: email}, (err, user) => {
+            if (err) {
+                console.log(err);
+                res.status(500).json({status: 'Not OK', err});
+            } else if (!user) {
+                res.status(404).json({status: 'Not OK', err: `User doesn't exist.`});
+            } else {
+                console.log(user);
+                res.status(200).json({status: `OK`, emailAddress: user.emailAddress, reviewer: user.reviewer});
+            }
+        });
+        return;
+    }
+    res.status(401).json({status: 'Not OK', err: `Unauthorised.`})
+})
 module.exports = router;
 

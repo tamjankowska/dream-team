@@ -15,16 +15,19 @@ const Navbar = () => {
                 </a>
                 <p>Video Game review site for uninfored parents</p>
                 <Dropdown />
+
             </div>
             <div className="search">
                 <input className="search-bar" type="text" placeholder="🔍  Search" />
             </div>
             <div className="navbar-user">
+
                 <h2><a href="/profile" className="profile"><img src={Profilepic} className="nav-user-img"></img>
                     <p>Username</p></a></h2>
             </div>
             <h2 className="links"><a href="/FAQ" className="faq"><RiQuestionnaireLine /> FAQ</a></h2>
             <h2 className="links"><a href="/signout" className="faq"><RiQuestionnaireLine /> FAQ</a></h2>
+
         </nav>
     )
 }

@@ -42,7 +42,20 @@ nav {
 }
 
 /* User img and name */
-
 .nav-user-img {
     width: 15%;
+}
+
+.links {
+    max-width: 100%;
+    margin-left: 5%;
+    padding: .6em 1.4em .5em .8em;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Arvo", sans-serif;
+    color: rgb(255, 255, 255); 
+    line-height: 1.3;
+    background-color: rgb(174, 152, 174);
+    border: 1px outset rgba(80, 63, 80, 0.25); 
+    border-radius: .6em;
 }
