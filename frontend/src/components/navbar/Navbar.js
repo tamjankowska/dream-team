@@ -6,7 +6,6 @@ import Profilepic from "../navbar/img/reviewpp.png"
 import './Navbar.css';
 import { RiQuestionnaireLine } from "react-icons/ri";
 
-
 const Navbar = () => {
     return (
         <nav>
@@ -32,6 +31,4 @@ const Navbar = () => {
         </nav>
     )
 }
-
-
 export default Navbar;

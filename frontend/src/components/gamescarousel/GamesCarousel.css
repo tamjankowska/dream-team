@@ -24,6 +24,38 @@
 .featured-games-container {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.img-n-caption {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+}
+.text-1 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-2 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-3 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-4 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-5 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
 }
 .featured-title-div {
     display: flex;
