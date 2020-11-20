@@ -6,5 +6,12 @@
     width: 40vw;
 }
 .carousel-title {
+    color: white;
+    line-height: 17px; 
+    padding: 15px; 
+    border-radius: 13px; 
+    background-image: linear-gradient(to right, rgb(45, 42, 60) 0%, rgb(106, 99, 142) 50%, rgb(45, 42, 60) 100%); 
+    box-shadow: rgba(0, 0, 0, 0.88) 5px 5px 15px 5px; 
+    border: 3px outset rgba(80, 63, 80, 0.25);
     font-size: 20px;
 }

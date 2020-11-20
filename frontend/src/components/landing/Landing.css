@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
-
+/* Whole page */
 body {
     background-color: #0f020ce8;
 
@@ -11,17 +11,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-h1{
-    color: white;
-    font-size: 40px; 
-    line-height: 17px; 
-    padding: 15px; 
-    border-radius: 13px; 
-    background-image: linear-gradient(to right, rgb(45, 42, 60) 0%, rgb(106, 99, 142) 50%, rgb(45, 42, 60) 100%); 
-    box-shadow: rgba(0, 0, 0, 0.88) 5px 5px 15px 5px; 
-    border: 3px outset rgba(80, 63, 80, 0.25);     
-}
-
+/* For for login */
 .logInForm {
     color: white;
     display: flex;
@@ -36,7 +26,17 @@ h1{
     border: 3px outset rgba(80, 63, 80, 0.25);   
     align-items: center;  
 }
-
+.login-title{
+    color: white;
+    font-size: 40px; 
+    line-height: 17px; 
+    padding: 15px; 
+    border-radius: 13px; 
+    background-image: linear-gradient(to right, rgb(45, 42, 60) 0%, rgb(106, 99, 142) 50%, rgb(45, 42, 60) 100%); 
+    box-shadow: rgba(0, 0, 0, 0.88) 5px 5px 15px 5px; 
+    border: 3px outset rgba(80, 63, 80, 0.25);     
+}
+/* Each targeted input */
 #email-input{
     color: rgb(255, 255, 255); 
     font-size: 15px; 
@@ -72,6 +72,7 @@ h1{
     border: 2px outset rgba(80, 63, 80, 0.25); 
     border-radius: 12px;
 }
+/* Link to signup page */
 .signup-link{
     text-decoration: none;
     color: rgb(255, 255, 255); 
