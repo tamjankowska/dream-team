@@ -1,5 +1,5 @@
 import './App.css';
-
+import React, {useState, useEffect} from 'react';
 import Landing from "./components/landing/Landing";
 import { BrowserRouter, Route } from 'react-router-dom';
 import Signup from "./components/signup/Signup";
@@ -13,6 +13,13 @@ import FAQ from './components/faq/Faq';
 
 
 function App() {
+
+  const [tabName] = useState("Clueless Reviews");
+
+  useEffect(()=> {
+    document.title = tabName;
+  })
+
   return (
     <div className="App">
       <div className="navbar">
