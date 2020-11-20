@@ -34,7 +34,7 @@ const Signup = () => {
 
     return (
         <div className="signup">
-            <h1>Sign Up</h1>
+            <h1 className="signup-title">Sign Up</h1>
             <form onSubmit={getResponse} className="signup-form">
                     <label htmlFor="username">Create a username</label>
                     <input id="username" type="text" name="username" placeholder="username" onChange={onChangeHandler}></input>

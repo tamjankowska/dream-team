@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import GamesCarousel from "../gamescarousel/GamesCarousel";
-import session from "express-session";
 
 class HomePage extends Component {
   constructor() {
@@ -37,9 +36,7 @@ class HomePage extends Component {
           <div>
             <GamesCarousel />
             <button onClick={this.getDetails}>Click</button>
-
-            {this.state.buttonClicked
-              ? this.state.gameData.map((data) => {
+            {this.state.buttonClicked ? this.state.gameData.map((data) => {
                   return (
                     <React.Fragment>
                       <p>

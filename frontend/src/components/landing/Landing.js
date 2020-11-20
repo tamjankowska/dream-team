@@ -33,7 +33,7 @@ function Landing() {
 
     return (
         <div className="landing">
-            <h1>Log in</h1>
+            <h1 className="login-title">Log in</h1>
             <form onSubmit={onSubmit} className="logInForm">
 
                 <label htmlFor="email">Enter your email address</label>
@@ -46,7 +46,7 @@ function Landing() {
                 
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>
-            
+            <button type="button" href="/profile"></button>
         </div>
     );
 }
