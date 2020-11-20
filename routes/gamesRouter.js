@@ -129,4 +129,35 @@ router.get('/:field/:value', (req, res) => {
     });
 });
 
+router.get('/reviews', (req, res) => {
+    Game.find({'reviewSchema': []}, (err, games) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.status(200).json(games);
+        }
+    })
+});
+
+router.post('/reviews/add', (req, res) => {
+    const title = req.body.reviews.title;
+    const gameTitle = req.body.reviews.gameTitle;
+    const shortDescription = req.body.reviews.shortDescription;
+    const review = req.body.reviews.review;
+    const reviewerName = req.body.reviews.reviewerName;
+    const dateReviewed = req.body.reviews.dateReviewed;
+    const reviewerScore = req.body.reviews.reviewerScore;
+    console.log(title); 
+    new Game ({ title,
+        gameTitle,
+        shortDescription,
+        review,
+        reviewerName,
+        dateReviewed,
+        reviewerScore
+       }).save((err, result) => {
+        res.status(200).send({ status: result });
+    });
+})
+
 module.exports = router;
