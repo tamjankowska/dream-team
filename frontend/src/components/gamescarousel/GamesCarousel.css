@@ -15,3 +15,28 @@
     border: 3px outset rgba(80, 63, 80, 0.25);
     font-size: 20px;
 }
+.carousel-caption {
+    background-color: #00000088;
+}
+.column {
+    margin: 4% 2% -2% 5%;
+}
+.featured-games-container {
+    display: flex;
+    flex-direction: column;
+}
+.featured-title-div {
+    display: flex;
+}
+.featured-games-title {
+    height: 15vh;
+    width: 100%;
+    padding: 3% 0 2% 2%;
+}
+.featured-games-sub-cont {
+    display: flex;
+}
+.featured-games-sub-cont img {
+    height: 25vh;
+    width: 20vw;
+}
