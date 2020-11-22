@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -32,4 +33,5 @@ userSchema.statics.checkPassword = async function(email, password) {
     }
     return false;
 }
+
 module.exports = mongoose.model('Users', userSchema); // Database name
