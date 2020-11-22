@@ -11,6 +11,7 @@ const usersRouter = require('./routes/usersRouter');
 const homepageRouter = require('./routes/homepageRouter');
 const profileRouter = require('./routes/profileRouter');
 const faqRouter = require('./routes/faqRouter');
+const reviewsRouter = require('./routes/reviewsRouter');
 
 require("dotenv").config();
 
@@ -36,6 +37,7 @@ app.use('/users', usersRouter);
 app.use('/home',homepageRouter);
 app.use('/profile', profileRouter);
 app.use('/faq', faqRouter);
+app.use('/reviews', reviewsRouter);
 
 app.listen(5000, () => {
     console.log('App is online.');
