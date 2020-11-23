@@ -56,11 +56,26 @@ function ControlledCarousel() {
                     <h1 className="featured-games-title">Featured Games</h1>
                 </div>
                 <div className="featured-games-sub-cont">
-                    <img src={spiderman} alt="Spiderman" />
-                    <img src={demonsSouls} alt="Demon's Souls" />
-                    <img src={fifa21} alt="Fifa 21" />
-                    <img src={codBlackOps} alt="Call Of Duty: Black Ops" />
+                    <div className="img-n-caption">
+                        <img src={spiderman} alt="Spiderman" />
+                        <p class="text-1">Spiderman</p>
+                    </div>
+                    <div className="img-n-caption">
+                        <img src={demonsSouls} alt="Demon's Souls" />
+                        <p className="text-2">Demon's Souls</p>
+                    </div>
+                    <div className="img-n-caption">
+                        <img src={fifa21} alt="Fifa 21" />
+                        <p className="text-3">Fifa 21</p>
+                    </div>
+                    <div className="img-n-caption">
+                        <img src={codBlackOps} alt="Call Of Duty: Black Ops" />
+                        <p className="text-4">Call Of Duty: Black Ops</p>
+                    </div>
+                    <div className="img-n-caption">
                     <img src={acValhalla} alt="Assassin's Creed Valhalla" />
+                        <p className="text-5">Assassin's Creed Valhalla</p>
+                    </div>
                 </div>
             </div>
             <div className="column">

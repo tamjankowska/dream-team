@@ -24,6 +24,38 @@
 .featured-games-container {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.img-n-caption {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+}
+.text-1 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-2 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-3 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-4 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
+}
+.text-5 {
+    position: absolute;
+    color: white;
+    background-color: #00000099;
 }
 .featured-title-div {
     display: flex;
@@ -32,6 +64,13 @@
     height: 15vh;
     width: 100%;
     padding: 3% 0 2% 2%;
+    color: white;
+    line-height: 17px; 
+    border-radius: 13px; 
+    background-image: linear-gradient(to right, rgb(45, 42, 60) 0%, rgb(106, 99, 142) 50%, rgb(45, 42, 60) 100%); 
+    box-shadow: rgba(0, 0, 0, 0.88) 5px 5px 15px 5px; 
+    border: 3px outset rgba(80, 63, 80, 0.25);
+    font-size: 35px;
 }
 .featured-games-sub-cont {
     display: flex;
