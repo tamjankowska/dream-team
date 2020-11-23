@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import GamesCarousel from "../gamescarousel/GamesCarousel";
+import Landing from "../landing/Landing"
 
 class HomePage extends Component {
   constructor() {
@@ -32,7 +33,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        {(!sessionStorage.getItem('loggedIn')) ? <h1>You are not logged in.</h1> :
+        {(!sessionStorage.getItem('loggedIn')) ? <Landing /> :
           <div>
             <GamesCarousel />
             <button onClick={this.getDetails}>Click</button>
