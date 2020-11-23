@@ -80,29 +80,44 @@ router.get("/id/:id", (req, res) => {
 router.delete("/id/:id", (req, res) => {
   Game.findOneAndDelete({ _id: req.params.id }, (err, game) => {
     if (err) {
-        console.log(err);
-        res.status(500).json({status: 'Not OK', err})
+      console.log(err);
+      res.status(500).json({ status: 'Not OK', err })
     } else if (!game) {
       console.log(err);
-      res.status(404).json({status: 'Not OK', err: `The game '${req.params.id}' you are trying to delete does not exist!`});
+      res.status(404).json({ status: 'Not OK', err: `The game '${req.params.id}' you are trying to delete does not exist!` });
     } else {
-      res.status(200).json({status: 'OK', game, msg: `${req.params.id} has been deleted` });
+      res.status(200).json({ status: 'OK', game, msg: `${req.params.id} has been deleted` });
     }
   });
 });
 
 router.get("/:field/:value", (req, res) => {
-  Game.find({[req.params.field]: req.params.value}, (err, game) => {
+  Game.find({ [req.params.field]: req.params.value }, (err, game) => {
     if (err) {
-        console.log(err);
-        res.status(500).json({status: 'Not OK', err});
+      console.log(err);
+      res.status(500).json({ status: 'Not OK', err });
     } else if (!game) {
-        console.log(err);
-        res.status(404).json({status: 'Not OK', msg: 'Not found'});
+      console.log(err);
+      res.status(404).json({ status: 'Not OK', msg: 'Not found' });
     } else {
-        res.status(200).json({status: 'OK', game});
+      res.status(200).json({ status: 'OK', game });
     }
   });
 });
+
+router.get("/categories", (req, res) => {
+  const query = Game.find({}).select({ "category": 1, "_id": 0 });
+  query.exec((err, value) => {
+    if (err) {
+      res.status(404).json({ status: "Not OK", err });
+    } else {
+      const categories = new Set()
+      for (let category of value){
+        categories.add(category.category)
+      }
+      res.status(200).json(  [...categories]  )
+    }
+  });
+})
 
 module.exports = router;
