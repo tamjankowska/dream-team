@@ -17,11 +17,18 @@ router.post('/signup', (req, res) => {
     const emailAddress = req.body.emailAddress;
     const password = req.body.password;
     const reviewer = req.body.reviewer;
-    new User({ username, 
-            emailAddress, 
-            password, 
-            reviewer}).save((err, result) => {
-            res.status(200).send({ status: result })
+    new User({
+        username,
+        emailAddress,
+        password,
+        reviewer
+    }).save((err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: "Not OK", err })
+        } else {
+            res.status(200).send({ status: "OK", result })
+        }
     });
 });
 
@@ -54,12 +61,12 @@ router.post('/search', (req, res) => {
 });
 
 router.get('/id/:id', (req, res) => {
-    User.findOne({_id: req.params.id}, (err, user) => {
+    User.findOne({ _id: req.params.id }, (err, user) => {
         if (err) {
             console.log(err);
             res.status(500).json(err);
         } else if (!user) {
-            res.status(404).json({err: `The user ${req.params.id} does not exist!`});
+            res.status(404).json({ err: `The user ${req.params.id} does not exist!` });
         } else {
             res.status(200).json(user);
         }
@@ -67,23 +74,23 @@ router.get('/id/:id', (req, res) => {
 });
 
 router.delete('/id/:id', (req, res) => {
-    User.findOneAndDelete({_id: req.params.id}, (err, user) => {
+    User.findOneAndDelete({ _id: req.params.id }, (err, user) => {
         if (err) {
             console.log(err);
-            res.status(404).json({err: `The user ${req.params.id} you are trying to delete does not exist!`})
+            res.status(404).json({ err: `The user ${req.params.id} you are trying to delete does not exist!` })
         } else {
-            res.status(200).json({user, msg: `${req.params.id} has been deleted`})
+            res.status(200).json({ user, msg: `${req.params.id} has been deleted` })
         }
     });
 });
 
 router.get('/:field/:value', (req, res) => {
-    User.find({[req.params.field]: req.params.value}, (err, user) => {
+    User.find({ [req.params.field]: req.params.value }, (err, user) => {
         if ([req.params.field] == 'password') {
-            res.status(403).json({msg: `It is not possible to find a user via their password, please use alternative search criteria.`});
+            res.status(403).json({ msg: `It is not possible to find a user via their password, please use alternative search criteria.` });
         } else if (err) {
             console.log(err);
-            res.status(404).json({err});
+            res.status(404).json({ err });
         } else {
             res.status(200).json(user);
         }
@@ -91,22 +98,22 @@ router.get('/:field/:value', (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    const {email, password} = req.body;
+    const { email, password } = req.body;
     if (await User.checkPassword(email, password)) {
-        User.findOne({emailAddress: email}, (err, user) => {
+        User.findOne({ emailAddress: email }, (err, user) => {
             if (err) {
                 console.log(err);
-                res.status(500).json({status: 'Not OK', err});
+                res.status(500).json({ status: 'Not OK', err });
             } else if (!user) {
-                res.status(404).json({status: 'Not OK', err: `User doesn't exist.`});
+                res.status(404).json({ status: 'Not OK', err: `User doesn't exist.` });
             } else {
                 console.log(user);
-                res.status(200).json({status: `OK`, emailAddress: user.emailAddress, reviewer: user.reviewer});
+                res.status(200).json({ status: `OK`, emailAddress: user.emailAddress, reviewer: user.reviewer });
             }
         });
         return;
     }
-    res.status(401).json({status: 'Not OK', err: `Unauthorised.`})
+    res.status(401).json({ status: 'Not OK', err: `Unauthorised.` })
 })
 module.exports = router;
 
