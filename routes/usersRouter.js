@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/schemas/users");
+const bcrypt = require('bcrypt');
 
 router.get("/", (req, res) => {
   User.find({}, (err, users) => {
@@ -13,7 +14,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/signup", (req, res) => {
+router.post("/signup", async(req, res) => {
+  if (req.body.password !== req.body.passwordCheck) {
+    return res.status(400).json({status: 'Not OK', err: 'Passwords Don\'t match'})
+  }
+  req.body.password = await bcrypt.hash(req.body.password, 10)
   new User(req.body).save((err, result) => {
     if (err) {
         console.log(err);
@@ -102,7 +107,6 @@ router.post("/login", async (req, res) => {
       } else if (!user) {
         res.status(404).json({ status: "Not OK", err: `User doesn't exist.` });
       } else {
-        console.log(user);
         res.status(200).json({status: `OK`, emailAddress: user.emailAddress, reviewer: user.reviewer});
       }
     });
