@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Signup.css';
+import {useHistory} from "react-router-dom"
 
 const Signup = () => {
+    let history = useHistory();
     const [username, setUser] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -10,13 +12,22 @@ const Signup = () => {
 
     const getResponse = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/signup', {
+        axios.post('http://localhost:5000/users/signup', {
             username: username,
-            email: email,
+            emailAddress: email,
             password: password,
-            passwordCheck: passwordCheck
+            passwordCheck: passwordCheck,
+            reviewer: false
         }).then((res) => {
-            console.log(res.data)
+            console.log(res.data.result);
+            if (res.data.status == 'OK') {
+                sessionStorage.setItem('loggedIn', 'true');
+                sessionStorage.setItem('email', res.data.emailAddress);
+                sessionStorage.setItem('reviewer', res.data.reviewer);
+                history.push('/home');
+            } else {
+                history.push('/signup');
+            }
         })
     };
 

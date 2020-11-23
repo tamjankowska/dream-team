@@ -25,19 +25,18 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/search", (req, res) => {
-  const { username, emailAddress, password, reviewer } = req.body;
   const query = {};
-  if (username) {
-    query.username = username;
+  if (req.body.username) {
+    query.username = req.body.username;
   }
-  if (emailAddress) {
-    query.emailAddress = emailAddress;
+  if (req.body.emailAddress) {
+    query.emailAddress = req.body.emailAddress;
   }
-  if (password) {
-    query.password = password;
+  if (req.body.password) {
+    query.password = req.body.password;
   }
-  if (reviewer) {
-    query.reviewer = reviewer;
+  if (req.body.reviewer) {
+    query.reviewer = req.body.reviewer;
   }
   User.find(query, (err, results) => {
     if (err) {
@@ -57,9 +56,7 @@ router.get("/id/:id", (req, res) => {
       console.log(err);
       res.status(500).json({status: 'Not OK', err});
     } else if (!user) {
-      res
-        .status(404)
-        .json({ status: 'Not OK', err: `The user ${req.params.id} does not exist!` });
+      res.status(404).json({ status: 'Not OK', err: `The user ${req.params.id} does not exist!` });
     } else {
       res.status(200).json({status: 'OK', user});
     }
@@ -71,8 +68,7 @@ router.delete("/id/:id", (req, res) => {
     if (err) {
         console.log(err);
         res.status(500).json({status: 'Not OK', err});
-    }
-    else if (!user) {
+    } else if (!user) {
       console.log(err);
       res.status(404).json({status: 'Not OK', err: `The user ${req.params.id} you are trying to delete does not exist!`});
     } else {
@@ -114,4 +110,5 @@ router.post("/login", async (req, res) => {
   }
   res.status(401).json({ status: "Not OK", err: `Unauthorised.` });
 });
+
 module.exports = router;
