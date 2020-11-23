@@ -1,0 +1,101 @@
+const express = require('express');
+const router = express.Router();
+const Review = require('../models/schemas/reviews');
+
+router.get('/', (req, res) => {
+    Review.find({}, (err, reviews) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json(err);
+        } else {
+            res.status(200).json(reviews);
+        }
+    });
+});
+
+router.post('/post', (req, res) => {
+    new Review(req.body).save((err, review) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ status: 'Not OK', err });
+        } else {
+            res.status(200).json({ status: 'OK', review})
+        }
+    });
+    });
+
+router.post('/search', (req, res) => {
+    const query = {};
+    if (req.body.title) {
+        query.title = req.body.title;
+    }
+    if (req.body.gameTitle) {
+        query.gameTitle = req.body.gameTitle;
+    }
+    if (req.body.shortDescription) {
+        query.shortDescription = req.body.shortDescription;
+    }
+    if (req.body.review) {
+        query.review = req.body.review
+    }
+    if (req.body.reviewerName) {
+        query.reviewerName = req.body.reviewerName;
+    }
+    if (req.body.dateReviewed) {
+        query.dateReviewed = req.body.dateReviewed;
+    }
+    if (req.body.reviewerScore) {
+        query.reviewerScore = req.body.reviewerScore;
+    }
+    Review.find(query, (err, reviews) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!reviews) {
+            res.status(404).json({status: 'Not OK', msg: 'Not found'});
+        } else {
+            res.status(200).json({status: 'OK', reviews});
+        }
+    });
+});
+
+router.get('id/:id', (req, res) => {
+    Review.findOne({ _id: req.params.id }, (err, review) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!review) {
+            res.status(404).json({ status: 'Not OK', err: `Review: ${req.params.id} does not exist!`})
+        } else {
+            res.status(200).json({status: 'OK', review});
+        }
+    });
+});
+
+router.delete('/id/:id', (req, res) => {
+    Review.findOneAndDelete({_id: req.params.id}, (err, review) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!review) {
+            res.status(404).json({status: 'Not OK', err: `Review: ${req.params.id} does not exist!` });
+        } else {
+            res.status(200).json({status: 'OK', msg: `Review: ${req.params.id} has been deleted`});
+        }
+    });
+});
+
+router.get('/:field/:value', (req, res) => {
+    Review.find({[req.params.field]: req.params.value}, (err, reviews) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!reviews) {
+            res.status(404).json({status: 'Not OK', err: 'No reviews found'});
+        } else {
+            res.status(200).json({status: 'OK', reviews});
+        }
+    });
+});
+
+module.exports = router;
