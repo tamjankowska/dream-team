@@ -13,83 +13,45 @@ router.get("/", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const {
-    title,
-    category,
-    ageRating,
-    violence,
-    sexAndNudity,
-    alcoholAndDrugs,
-    gambling,
-    explicitLanguage,
-    averageScore,
-    publisher,
-    releaseDate,
-  } = req.body;
-  new Game({
-    title,
-    category,
-    ageRating,
-    violence,
-    sexAndNudity,
-    alcoholAndDrugs,
-    gambling,
-    explicitLanguage,
-    averageScore,
-    publisher,
-    releaseDate,
-  }).save((err, result) => {
+  new Game(req.body).save((err, result) => {
     res.status(200).send({ status: result });
   });
 });
 
 router.post("/search", (req, res) => {
-  const {
-    title,
-    category,
-    ageRating,
-    violence,
-    sexAndNudity,
-    alcoholAndDrugs,
-    gambling,
-    explicitLanguage,
-    averageScore,
-    publisher,
-    releaseDate,
-  } = req.body;
   const query = {};
-  if (title) {
-    query.title = title;
+  if (req.body.title) {
+    query.title = req.body.title;
   }
-  if (category) {
-    query.category = category;
+  if (req.body.category) {
+    query.category = req.body.category;
   }
-  if (ageRating) {
-    query.ageRating = ageRating;
+  if (req.body.ageRating) {
+    query.ageRating = req.body.ageRating;
   }
-  if (violence) {
-    query.violence = violence;
+  if (req.body.violence) {
+    query.violence = req.body.violence;
   }
-  if (sexAndNudity) {
-    query.sexAndNudity = sexAndNudity;
+  if (req.body.sexAndNudity) {
+    query.sexAndNudity = req.body.sexAndNudity;
   }
-  if (alcoholAndDrugs) {
-    query.alcoholAndDrugs = alcoholAndDrugs;
+  if (req.body.alcoholAndDrugs) {
+    query.alcoholAndDrugs = req.body.alcoholAndDrugs;
   }
-  if (gambling) {
-    query.gambling = gambling;
+  if (req.body.gambling) {
+    query.gambling = req.body.gambling;
   }
-  if (explicitLanguage) {
-    query.explicitLanguage = explicitLanguage;
+  if (req.body.explicitLanguage) {
+    query.explicitLanguage = req.body.explicitLanguage;
   }
-  if (averageScore) {
-    query.averageScore = averageScore;
+  if (req.body.averageScore) {
+    query.averageScore = req.body.averageScore;
   }
-  if (publisher) {
-    query.publisher = publisher;
+  if (req.body.publisher) {
+    query.publisher = req.body.publisher;
   }
-  if (releaseDate) {
-    query.releaseDate = releaseDate;
+  if (req.body.releaseDate) {
+    query.releaseDate = req.body.releaseDate;
   }
 
   Game.find(query, (err, results) => {
@@ -118,58 +80,28 @@ router.get("/id/:id", (req, res) => {
 router.delete("/id/:id", (req, res) => {
   Game.findOneAndDelete({ _id: req.params.id }, (err, game) => {
     if (err) {
+        console.log(err);
+        res.status(500).json({status: 'Not OK', err})
+    } else if (!game) {
       console.log(err);
-      res
-        .status(404)
-        .json({
-          err: `The game '${req.params.id}' you are trying to delete does not exist!`,
-        });
+      res.status(404).json({status: 'Not OK', err: `The game '${req.params.id}' you are trying to delete does not exist!`});
     } else {
-      res.status(200).json({ game, msg: `${req.params.id} has been deleted` });
+      res.status(200).json({status: 'OK', game, msg: `${req.params.id} has been deleted` });
     }
   });
 });
 
 router.get("/:field/:value", (req, res) => {
-  Game.find({ [req.params.field]: req.params.value }, (err, game) => {
+  Game.find({[req.params.field]: req.params.value}, (err, game) => {
     if (err) {
-      console.log(err);
-      res.status(404).json({ err });
+        console.log(err);
+        res.status(500).json({status: 'Not OK', err});
+    } else if (!game) {
+        console.log(err);
+        res.status(404).json({status: 'Not OK', msg: 'Not found'});
     } else {
-      res.status(200).json(game);
+        res.status(200).json({status: 'OK', game});
     }
-  });
-});
-
-router.get("/reviews", (req, res) => {
-  Game.find({ reviewSchema: [] }, (err, games) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.status(200).json(games);
-    }
-  });
-});
-
-router.post("/reviews/add", (req, res) => {
-  const title = req.body.reviews.title;
-  const gameTitle = req.body.reviews.gameTitle;
-  const shortDescription = req.body.reviews.shortDescription;
-  const review = req.body.reviews.review;
-  const reviewerName = req.body.reviews.reviewerName;
-  const dateReviewed = req.body.reviews.dateReviewed;
-  const reviewerScore = req.body.reviews.reviewerScore;
-  console.log(title);
-  new Game({
-    title,
-    gameTitle,
-    shortDescription,
-    review,
-    reviewerName,
-    dateReviewed,
-    reviewerScore,
-  }).save((err, result) => {
-    res.status(200).send({ status: result });
   });
 });
 

@@ -14,23 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-    const { title, 
-        gameTitle, 
-        shortDescription, 
-        review, 
-        reviewerName, 
-        dateReviewed, 
-        reviewerScore }
-        = req.body;
-    new Review({ 
-        title,
-        gameTitle,
-        shortDescription,
-        review,
-        reviewerName,
-        dateReviewed,
-        reviewerScore
-    }).save((err, review) => {
+    new Review(req.body).save((err, review) => {
         if (err) {
             console.log(err);
             res.status(500).json({ status: 'Not OK', err });
@@ -38,43 +22,37 @@ router.post('/post', (req, res) => {
             res.status(200).json({ status: 'OK', review})
         }
     });
-});
+    });
 
 router.post('/search', (req, res) => {
-    const { title, 
-        gameTitle, 
-        shortDescription, 
-        review, 
-        reviewerName, 
-        dateReviewed, 
-        reviewerScore }
-        = req.body;
     const query = {};
-    if (title) {
-        query.title = title;
+    if (req.body.title) {
+        query.title = req.body.title;
     }
-    if (gameTitle) {
-        query.gameTitle = gameTitle;
+    if (req.body.gameTitle) {
+        query.gameTitle = req.body.gameTitle;
     }
-    if (shortDescription) {
-        query.shortDescription = shortDescription;
+    if (req.body.shortDescription) {
+        query.shortDescription = req.body.shortDescription;
     }
-    if (review) {
-        query.review = review
+    if (req.body.review) {
+        query.review = req.body.review
     }
-    if (reviewerName) {
-        query.reviewerName = reviewerName;
+    if (req.body.reviewerName) {
+        query.reviewerName = req.body.reviewerName;
     }
-    if (dateReviewed) {
-        query.dateReviewed = dateReviewed;
+    if (req.body.dateReviewed) {
+        query.dateReviewed = req.body.dateReviewed;
     }
-    if (reviewerScore) {
-        query.reviewerScore = reviewerScore;
+    if (req.body.reviewerScore) {
+        query.reviewerScore = req.body.reviewerScore;
     }
     Review.find(query, (err, reviews) => {
         if (err) {
             console.log(err);
-            res.status(204).json([]);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!reviews) {
+            res.status(404).json({status: 'Not OK', msg: 'Not found'});
         } else {
             res.status(200).json({status: 'OK', reviews});
         }
