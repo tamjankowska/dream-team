@@ -13,21 +13,26 @@ const Navbar = () => {
                 <a href='/home'>
                     <img className="logo" src={Eggicorn} alt="logo" />
                 </a>
-                <p>Video Game review site for uninfored parents</p>
+                <p>Video Game review site for uninformed parents</p>
                 <Dropdown />
-
+                <div className="search">
+                    <input className="search-bar" type="text" placeholder="🔍  Search" />
+                </div>
             </div>
-            <div className="search">
-                <input className="search-bar" type="text" placeholder="🔍  Search" />
+            <div className="user-signout-container">
+                <div className="navbar-user">
+                    <h2><a href="/profile" className="profile"><img src={Profilepic} className="nav-user-img"></img>
+                    <p className="username-text">Username</p></a></h2>
+                </div>
+                <div className="faq-buttons">
+                    <div className="single-faq">
+                        <p className="links"><a href="/FAQ" className="faq"><RiQuestionnaireLine /> FAQ</a></p>
+                    </div>
+                    <div className="single-faq">
+                        <p className="links"><a href="/signout" className="faq"><RiQuestionnaireLine /> Sign out</a></p>
+                    </div>
+                </div>
             </div>
-            <div className="navbar-user">
-
-                <h2><a href="/profile" className="profile"><img src={Profilepic} className="nav-user-img"></img>
-                    <p>Username</p></a></h2>
-            </div>
-            <h2 className="links"><a href="/FAQ" className="faq"><RiQuestionnaireLine /> FAQ</a></h2>
-            <h2 className="links"><a href="/signout" className="faq"><RiQuestionnaireLine /> FAQ</a></h2>
-
         </nav>
     )
 }
