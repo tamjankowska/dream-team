@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Dropdown } from 'semantic-ui-react'
 import Dropdown from "./Dropdown"
 import Eggicorn from "./img/eggicorn.png"
 import Profilepic from "../navbar/img/reviewpp.png"
@@ -22,7 +21,7 @@ const Navbar = () => {
             <div className="user-signout-container">
                 <div className="navbar-user">
                     <h2><a href="/profile" className="profile"><img src={Profilepic} className="nav-user-img"></img>
-                    <p className="username-text">{sessionStorage.getItem('username')}</p></a></h2>
+                    <p className="username-text">{sessionStorage.getItem('username')} </p></a></h2>
                 </div>
                 <div className="faq-buttons">
                     <div className="single-faq">

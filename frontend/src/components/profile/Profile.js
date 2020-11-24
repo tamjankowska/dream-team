@@ -27,7 +27,7 @@ const Profile = () => {
 
     return (
         <div>
-        {(!sessionStorage.getItem('loggedIn')) ? <Landing /> :
+        {(!sessionStorage.getItem('loggedIn')) ? <div><h1 className="title">You are not logged in</h1><Landing /></div> :
             <div className="whole-profile">
                 <div className="profile-sidebar">
                     <div className="profile-sidebar-top">
