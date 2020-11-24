@@ -71,6 +71,7 @@ body {
     background-color: rgb(174, 152, 174); 
     border: 2px outset rgba(80, 63, 80, 0.25); 
     border-radius: 12px;
+    cursor: pointer;
 }
 /* Link to signup page */
 .signup-link{

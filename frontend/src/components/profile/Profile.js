@@ -13,13 +13,13 @@ import Landing from "../landing/Landing"
 
 
 const Profile = () => {
-    
+    const [index, setIndex] = useState(0);
+
     useEffect(() => {
         if (!sessionStorage.getItem("loggedIn")) {
             return;
         }
-    })
-    const [index, setIndex] = useState(0);
+    })    
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -33,8 +33,8 @@ const Profile = () => {
                     <div className="profile-sidebar-top">
                         <img src={Profilepic} alt="profileimg" className="profile-pic" />
                         <div className="profile-info">
-                            <p>username: whoeverloggedin</p>
-                            <p>email: whoeverloggedin@whoeverloggedin.com</p>
+                            <p>username: {sessionStorage.getItem('username')}</p>
+                            <p>email: {sessionStorage.getItem('email')}</p>
                         </div>
                     </div>
                     <div className="profile-dropdown">

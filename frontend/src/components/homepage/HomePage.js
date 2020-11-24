@@ -33,7 +33,8 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        {(!sessionStorage.getItem('loggedIn')) ? <Landing /> :
+        
+        {(!sessionStorage.getItem('loggedIn')) ? <div><h1>You are not logged in</h1><Landing /></div> :
           <div>
             <GamesCarousel />
             <button onClick={this.getDetails}>Click</button>

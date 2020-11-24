@@ -24,6 +24,7 @@ function Landing() {
                 sessionStorage.setItem('loggedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('reviewer', res.data.reviewer);
+                sessionStorage.setItem('username', res.data.username);
                 history.push('/home');
             } else {
                 history.push('/signup');
