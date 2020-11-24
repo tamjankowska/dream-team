@@ -29,7 +29,7 @@ const Navbar = () => {
                         <p className="links"><a href="/FAQ" className="faq"><RiQuestionnaireLine /> FAQ</a></p>
                     </div>
                     <div className="single-faq">
-                        <p className="links"><a href="/signout" className="faq"><RiQuestionnaireLine /> Sign out</a></p>
+                        <p className="links"><a href="/logout" className="faq"><RiQuestionnaireLine /> Sign out</a></p>
                     </div>
                 </div>
             </div>
