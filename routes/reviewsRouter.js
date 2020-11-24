@@ -108,6 +108,14 @@ router.get('/game/:id', (req, res) => {
         } else if (!reviews) {
             res.status(404).json({status: 'Not OK', err: 'No reviews found'});
         } else {
+            User.findOne({ _id: gameID }, (err, user) => {
+                if (err) {
+                  console.log(err);
+                  res.status(500).json({ status: "Not OK", err });
+                } else {
+                  res.status(200).json({status: 'OK', username: user.username});
+                }
+              });
             res.status(200).json({status: 'OK', reviews});
         }
     });

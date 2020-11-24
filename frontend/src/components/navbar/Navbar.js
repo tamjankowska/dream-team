@@ -14,9 +14,6 @@ const Navbar = () => {
                 </a>
                 <p>Video Game review site for uninformed parents</p>
                 <Dropdown />
-                <div className="search">
-                    <input className="search-bar" type="text" placeholder="🔍  Search" />
-                </div>
             </div>
             <div className="user-signout-container">
                 <div className="navbar-user">
