@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
+const Games = require('./games');
+const Users = require('./users');
 
 const reviewSchema = new mongoose.Schema({
+    gameID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Games'
+    },
     title: {
         type: String,
         required: true
@@ -17,15 +23,19 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    reviewerName: {
-        type: String,
-        required: true
+    reviewer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Users'
     },
     dateReviewed: {
         type: Date,
         required: true
     },
     reviewerScore: {
+        type: String,
+        required: true
+    },
+    linkToBuy: {
         type: String,
         required: true
     }
