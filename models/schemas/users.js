@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Reviews = require('./reviews');
+const bcrypt = require('bcrypt');
+
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -29,7 +31,7 @@ userSchema.statics.checkPassword = async function(email, password) {
     if (!user) {
         return false;
     }
-    if (user.password == password) {
+    if (await bcrypt.compare(password, user.password)) {
         return true;
     }
     return false;

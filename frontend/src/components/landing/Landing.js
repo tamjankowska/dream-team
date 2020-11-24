@@ -46,7 +46,6 @@ function Landing() {
                 
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>
-            <button type="button" href="/profile"></button>
         </div>
     );
 }

@@ -1,25 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios"
 import "./Dropdown.css"
 
-const Categories = () => {
+const Categories = (props) => {
 
+    const [categories, setCategories] = useState([]);
+    
+    const getResponse = () => {
+        console.log("categories")
+        axios.get("http://localhost:5000/games/categories").then((res) => {
+            setCategories(res.data)
+            console.log(res.data)
+        });
+    };
+    
+    useEffect(() => {
+        console.log("categories")
+        if (categories.length == 0) {
+            getResponse()
+        }
+    });
+    
 
     return (
-        <div className="search-categories">
-            <div className="select">                
-                <select  class="select-css" name="search_categories" id="search_categories">
-                    <option value="" disabled selected>Categories</option>
-                    <option className="dropdown-item" value="horror">Shown from database</option>
-                    <option className="dropdown-item" value="Happy">Shown from database</option>
-                    {/* <optgroup label="horror">Horror</optgroup> */}
-                    <option className="dropdown-item" value="Sad">Shown from database</option>
-                    <option className="dropdown-item" value="Weird">Shown from database</option>
-                </select>
+            <div className="search-categories">
+                <div className="select">
+                    <select className="select-css" name="search_categories" id="search_categories" >
+                        <option value="Categories" disabled selected>Categories</option>
+                        {categories.map((category,index) => 
+                            <option className="dropdown-item" key={index}>{category}</option> 
+                        )}
+                    </select>
+                </div>
             </div>
-        </div>
-
-    )
+    );
 }
-
 export default Categories;
