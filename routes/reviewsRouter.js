@@ -101,22 +101,18 @@ router.get('/reviewer/:id', (req, res) => {
 });
 
 router.get('/game/:id', (req, res) => {
-    Review.find({gameID: req.params.id}, (err, reviews) => {
+    Review.find({gameID: req.params.id}, async (err, reviews) => {
         if (err) {
             console.log(err);
             res.status(500).json({status: 'Not OK', err});
         } else if (!reviews) {
             res.status(404).json({status: 'Not OK', err: 'No reviews found'});
         } else {
-            User.findOne({ _id: gameID }, (err, user) => {
-                if (err) {
-                  console.log(err);
-                  res.status(500).json({ status: "Not OK", err });
-                } else {
-                  res.status(200).json({status: 'OK', username: user.username});
-                }
-              });
-            res.status(200).json({status: 'OK', reviews});
+            const rs = await Promise.all(reviews.map(async (review) => {
+                const user = await User.findOne({ _id: review.reviewer }).exec();
+                return {review, username: user.username}
+            }));
+            res.status(200).json({status: 'OK', username: rs.user, reviews: rs});
         }
     });
 });
