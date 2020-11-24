@@ -61,7 +61,7 @@ router.post('/search', (req, res) => {
     });
 });
 
-router.get('id/:id', (req, res) => {
+router.get('/id/:id', (req, res) => {
     Review.findOne({ _id: req.params.id }, (err, review) => {
         if (err) {
             console.log(err);
@@ -87,8 +87,8 @@ router.delete('/id/:id', (req, res) => {
     });
 });
 
-router.get('/:field/:value', (req, res) => {
-    Review.find({[req.params.field]: req.params.value}, (err, reviews) => {
+router.get('/reviewer/:id', (req, res) => {
+    User.findOne({_id: req.params.id}).populate('reviews').exec((err, reviews) => {
         if (err) {
             console.log(err);
             res.status(500).json({status: 'Not OK', err});
@@ -100,8 +100,8 @@ router.get('/:field/:value', (req, res) => {
     });
 });
 
-router.get('/reviewer/:id', (req, res) => {
-    User.findOne({_id: req.params.id}).populate('reviews').exec((err, reviews) => {
+router.get('/game/:id', (req, res) => {
+    Review.find({gameID: req.params.id}, (err, reviews) => {
         if (err) {
             console.log(err);
             res.status(500).json({status: 'Not OK', err});
