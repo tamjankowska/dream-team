@@ -57,44 +57,60 @@ function ControlledCarousel() {
                 </div>
                 <div className="featured-games-sub-cont">
                     <div className="img-n-caption">
-                        <img src={spiderman} alt="Spiderman" />
-                        <p class="text-1">Spiderman</p>
+                        <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3dcfd81e3145848abb7bf')}}>
+                            <img src={spiderman} alt="Spiderman" />
+                            <p class="text-1">Spiderman</p>
+                        </a>
                     </div>
                     <div className="img-n-caption">
-                        <img src={demonsSouls} alt="Demon's Souls" />
-                        <p className="text-2">Demon's Souls</p>
+                        <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3df0181e3145848abb7c0')}}>
+                            <img src={demonsSouls} alt="Demon's Souls" />
+                            <p className="text-2">Demon's Souls</p>
+                        </a>
                     </div>
                     <div className="img-n-caption">
-                        <img src={fifa21} alt="Fifa 21" />
-                        <p className="text-3">Fifa 21</p>
+                        <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3e21081e3145848abb7c2')}}>
+                            <img src={fifa21} alt="Fifa 21" />
+                            <p className="text-3">Fifa 21</p>
+                        </a>
                     </div>
                     <div className="img-n-caption">
-                        <img src={codBlackOps} alt="Call Of Duty: Black Ops" />
-                        <p className="text-4">Call Of Duty: Black Ops</p>
+                        <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3e25c81e3145848abb7c3')}}>
+                            <img src={codBlackOps} alt="Call Of Duty: Black Ops" />
+                            <p className="text-4">Call Of Duty: Black Ops</p>
+                        </a>
                     </div>
                     <div className="img-n-caption">
-                    <img src={acValhalla} alt="Assassin's Creed Valhalla" />
-                        <p className="text-5">Assassin's Creed Valhalla</p>
+                        <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3e34881e3145848abb7c4')}}>
+                            <img src={acValhalla} alt="Assassin's Creed Valhalla" />
+                            <p className="text-5">Assassin's Creed Valhalla</p>
+                        </a>
                     </div>
                 </div>
             </div>
             <div className="column">
                 <h1 className="carousel-title">Action/Adventure</h1>
                 <Carousel activeIndex={index1} onSelect={handleSelect1}>
+                
                 <Carousel.Item className="carousel-item">
-                <img
-                    className="carousel-image"
-                    src={spiderman}
-                    alt="First slide"
-                />
+                <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3dcfd81e3145848abb7bf')}}>
+                    <img
+                        className="carousel-image"
+                        src={spiderman}
+                        alt="First slide"
+                    />
+                </a>
                     <Carousel.Caption className="carousel-caption">
+                    <a href = '/review' onClick = {() => {sessionStorage.setItem('gameID', '5fb3dcfd81e3145848abb7bf')}}>
                         <h3>Spiderman</h3>
                         <p>
                             In the latest adventure in Marvel’s Spider-Man, teenager Miles Morales is following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. To save New York, Miles must take up the mantle of Spider-Man and own it.
                         </p>
+                    </a>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
+                
                 <img
                     className="carousel-image"
                     src={demonsSouls}

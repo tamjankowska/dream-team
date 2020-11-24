@@ -6,6 +6,7 @@ import Signup from "./components/signup/Signup";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from './components/homepage/HomePage';
 import Logout from './components/logout/Logout';
+import Review from './components/review/review';
 
 import Profile from "./components/profile/Profile"
 
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/logout' component={Logout} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/FAQ" component={FAQ} />
+        <Route exact path="/review" component={Review} />
       </BrowserRouter> 
     </div>
   );

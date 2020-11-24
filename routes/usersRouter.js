@@ -121,7 +121,7 @@ router.get('/:id', function (req, res) {
       console.log(err);
       res.status(500).json({ status: "Not OK", err });
     } else {
-      res.status(200).json(user);
+      res.status(200).json({status: 'OK', user});
     }
   });
 })

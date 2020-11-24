@@ -7,15 +7,12 @@ const Categories = (props) => {
     const [categories, setCategories] = useState([]);
     
     const getResponse = () => {
-        console.log("categories")
         axios.get("http://localhost:5000/games/categories").then((res) => {
             setCategories(res.data)
-            console.log(res.data)
         });
     };
     
     useEffect(() => {
-        console.log("categories")
         if (categories.length == 0) {
             getResponse()
         }
