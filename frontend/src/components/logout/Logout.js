@@ -7,6 +7,7 @@ const Logout = () => {
     sessionStorage.removeItem('loggedIn');
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('reviewer');
+    sessionStorage.removeItem('username');
     // add in useEffect to return, redirect to landing/login page after ~5 seconds
     return (
         <div>

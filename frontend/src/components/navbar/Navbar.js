@@ -22,7 +22,7 @@ const Navbar = () => {
             <div className="user-signout-container">
                 <div className="navbar-user">
                     <h2><a href="/profile" className="profile"><img src={Profilepic} className="nav-user-img"></img>
-                    <p className="username-text">Username</p></a></h2>
+                    <p className="username-text">{sessionStorage.getItem('username')}</p></a></h2>
                 </div>
                 <div className="faq-buttons">
                     <div className="single-faq">
