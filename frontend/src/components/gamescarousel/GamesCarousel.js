@@ -89,7 +89,9 @@ function ControlledCarousel() {
                 />
                     <Carousel.Caption className="carousel-caption">
                         <h3>Spiderman</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <p>
+                            In the latest adventure in Marvel’s Spider-Man, teenager Miles Morales is following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. To save New York, Miles must take up the mantle of Spider-Man and own it.
+                        </p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -101,7 +103,9 @@ function ControlledCarousel() {
 
                 <Carousel.Caption className="carousel-caption">
                     <h3>Demon's Souls</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        From Bluepoint Games comes a remake of the PlayStation classic, Demon’s Souls™. Entirely rebuilt from the ground up and masterfully enhanced, this remake introduces the horrors of a fog-laden, dark fantasy land to a whole new generation of gamers.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -114,7 +118,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Assassin's Creed Valhalla</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        In Assassin’s Creed Valhalla, you are Eivor, a fierce Viking warrior raised on tales of battle and glory. Explore a dynamic and beautiful open world set against the brutal backdrop of England’s Dark Ages.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -128,7 +132,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Sackboy: A Big Adventure</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Explore here, there and everywhere as you utilise Sackboy’s cool, diverse move-set to face a huge variety of thrilling challenges, fierce enemies and startling surprises. Take on side-splitting challenges in local and online* party play.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -142,7 +146,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Godfall</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Aperion is on the precipice of ruin. You are the last of the Valorian knights, god-like warriors able to equip Valorplates, legendary armor sets that transform wielders into unstoppable masters of melee combat.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -159,7 +163,9 @@ function ControlledCarousel() {
                     />
                 <Carousel.Caption className="carousel-caption">
                     <h3>Fifa 21</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>
+                        Win as one in EA SPORTS™ FIFA 21, powered by Frostbite™. Whether it's on the streets or in the stadium, FIFA 21 has more ways to play than ever before, including the UEFA Champions League and CONMEBOL Libertadores.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -171,7 +177,9 @@ function ControlledCarousel() {
 
                 <Carousel.Caption className="carousel-caption">
                     <h3>Tony Hawk's Pro Skater Remastered</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        Developed by the masters of the remasters – Vicarious Visions – the games that defined a generation are back and will blend original levels, classic pro skaters, old-school tricks, iconic songs from the original franchise, and more.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -184,7 +192,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>UFC 4</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        In EA SPORTS UFC 4 the fighter you become is shaped by your fight style, your achievements, and your personality. Experience the origins of combat sports in two all-new environments, The Kumite and The Backyard, or challenge the world in new Blitz Battles or Online World Championships to become the undisputed champ.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -198,7 +206,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>NBA 2K21</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        NBA 2K21 is the latest title in the world-renowned, best-selling NBA 2K series, delivering an industry-leading sports video game experience on PlayStation 4. NBA 2K21 offers one-of-a-kind immersion into all facets of NBA basketball and culture - where Everything is Game.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -212,7 +220,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Mario and Sonic Olympic Games Tokyo 2020</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Go for gold as you compete in action‐packed sports games, including 4 brand new events to Tokyo 2020—Skateboarding, Karate, Surfing, and Sport Climbing, as well as a large selection of classic events. Play as Mario, Sonic, Yoshi, Luigi, Dr. Eggman, and many more.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -229,7 +237,9 @@ function ControlledCarousel() {
                     />
                 <Carousel.Caption className="carousel-caption">
                     <h3>Call Of Duty: Black Ops Cold War</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>
+                        Black Ops Cold War will drop fans into the depths of the Cold War’s volatile geopolitical battle of the early 1980s. Players will come face-to-face with historical figures and hard truths, as they battle around the globe.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -241,7 +251,9 @@ function ControlledCarousel() {
 
                 <Carousel.Caption className="carousel-caption">
                     <h3>The Persistence</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        A brutal take on the survival-horror genre that integrates rogue-like design elements to give the action an extra edge. Procedurally generated stages that change with each playthrough, creating a labyrinth-like experience that adds to the tension.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -254,7 +266,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Resident Evil 2</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        The genre-defining masterpiece Resident Evil 2 returns, completely rebuilt from the ground up for a deeper narrative experience. Using Capcom’s proprietary RE Engine, Resident Evil 2 offers a fresh take on the classic survival horror saga with breathtakingly realistic visuals.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -271,7 +283,9 @@ function ControlledCarousel() {
                     />
                 <Carousel.Caption className="carousel-caption">
                     <h3>Godfall</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>
+                        Aperion is on the precipice of ruin. You are the last of the Valorian knights, god-like warriors able to equip Valorplates, legendary armor sets that transform wielders into unstoppable masters of melee combat.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -283,7 +297,9 @@ function ControlledCarousel() {
 
                 <Carousel.Caption className="carousel-caption">
                     <h3>Cat Quest II</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        Cat Quest is an open-world action-RPG set in a fantasy realm of cats. Sequel to the award-winning original, Cat Quest II now lets you play solo or with a friend, as both a cat and dog as you embark on an epic journey!
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -296,7 +312,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Animal Crossing: New Horizons</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Animal Crossing: New Horizons is a life-simulation game for players looking to escape the reality of life and experience an Island Getaway.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -310,7 +326,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Hogwarts Legacy</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Hogwarts Legacy is filled with immersive magic, putting players at the centre of their adventure. They will grow their character’s abilities as they master powerful spells and select companions to help them face off deadly enemies.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -327,7 +343,9 @@ function ControlledCarousel() {
                     />
                 <Carousel.Caption className="carousel-caption">
                     <h3>Shadowlands</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>
+                        The Shadowlands, resting place for every mortal soul—virtuous or vile—that has ever lived. Journey beyond the veil, discover five otherworldly realms of wonder and horror, gain incredible powers — and save Azeroth from all-consuming darkness.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 </Carousel>
@@ -343,7 +361,9 @@ function ControlledCarousel() {
                     />
                 <Carousel.Caption className="carousel-caption">
                     <h3>The Dark Pictures Anthology: Little Hope</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>
+                        Trapped in the abandoned town of Little Hope, 4 college students and their professor must escape the nightmarish visions that relentlessly pursue them through an impenetrable fog.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -355,7 +375,9 @@ function ControlledCarousel() {
 
                 <Carousel.Caption className="carousel-caption">
                     <h3>Bendy and the Ink Machine</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        Bendy and the Ink Machine™ is a first-person puzzle-action-horror game with a unique cartoon atmosphere and an intense, frightening storyline that keeps you guessing throughout. Fight the darkness. Escape the Ink Demon. Fear the Machine.
+                    </p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className="carousel-item">
@@ -368,7 +390,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>The Persistence</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        A brutal take on the survival-horror genre that integrates rogue-like design elements to give the action an extra edge. Procedurally generated stages that change with each playthrough, creating a labyrinth-like experience that adds to the tension.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -382,7 +404,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>Resident Evil 2</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        The genre-defining masterpiece Resident Evil 2 returns, completely rebuilt from the ground up for a deeper narrative experience. Using Capcom’s proprietary RE Engine, Resident Evil 2 offers a fresh take on the classic survival horror saga with breathtakingly realistic visuals.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
@@ -396,7 +418,7 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption">
                     <h3>The Evil Within 2</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        From mastermind Shinji Mikami, The Evil Within 2 is the latest evolution of survival horror. Detective Sebastian Castellanos has lost it all. But when given a chance to save his daughter, he must descend once more into the nightmarish world of STEM.
                     </p>
                 </Carousel.Caption>
                 </Carousel.Item>
