@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Review = require('../models/schemas/reviews');
+const User = require('../models/schemas/users');
+const Game = require('../models/schemas/games');
 
 router.get('/', (req, res) => {
     Review.find({}, (err, reviews) => {
@@ -87,6 +89,19 @@ router.delete('/id/:id', (req, res) => {
 
 router.get('/:field/:value', (req, res) => {
     Review.find({[req.params.field]: req.params.value}, (err, reviews) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({status: 'Not OK', err});
+        } else if (!reviews) {
+            res.status(404).json({status: 'Not OK', err: 'No reviews found'});
+        } else {
+            res.status(200).json({status: 'OK', reviews});
+        }
+    });
+});
+
+router.get('/reviewer/:id', (req, res) => {
+    User.findOne({_id: req.params.id}).populate('reviews').exec((err, reviews) => {
         if (err) {
             console.log(err);
             res.status(500).json({status: 'Not OK', err});

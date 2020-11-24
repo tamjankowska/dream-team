@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Reviews = require('./reviews');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -13,10 +14,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    reviewer: {
-        type: Boolean,
-        required: true
-    }
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Reviews'
+    }]
 });
 
 userSchema.statics.checkExists = async function(email) {
