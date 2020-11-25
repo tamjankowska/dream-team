@@ -21,7 +21,7 @@ const FAQ = () => {
             <input id="q0" type="checkbox" class="panel" />
             <div class="plus">+</div>
             <label for="q0" class="panel-title">
-              What is this site
+              What is this site?
             </label>
             <div class="panel-content">
               <p>Bloody hard work</p>
@@ -33,7 +33,7 @@ const FAQ = () => {
             <input id="q1" type="checkbox" class="panel" />
             <div class="plus">+</div>
             <label for="q1" class="panel-title">
-              What are the age ratings
+              What are the age ratings?
             </label>
             <div class="panel-content">
                 <img className="age-pic" src={age3} alt = "age 3" />
@@ -64,7 +64,7 @@ const FAQ = () => {
             <input id="q2" type="checkbox" class="panel" />
             <div class="plus">+</div>
             <label for="q2" class="panel-title">
-              What do the labels mean
+              What do the labels mean?
             </label>
             <div class="panel-content">
             <img className="age-pic" src={Violence} alt = "violence label" />
@@ -96,7 +96,7 @@ const FAQ = () => {
             <input id="q3" type="checkbox" class="panel" />
             <div class="plus">+</div>
             <label for="q3" class="panel-title">
-              How we rate games
+              How do we rate games?
             </label>
             <div class="panel-content">
                 <p>Many console and PC games are still released as a physical product and sold via retailers. To ensure that these games always display the correct age classification on the box, a robust procedure is crucial:</p>
@@ -115,7 +115,7 @@ const FAQ = () => {
             <input id="q4" type="checkbox" class="panel" />
             <div class="plus">+</div>
             <label for="q4" class="panel-title">
-              How do I post a review
+              How do I post a review?
             </label>
             <div class="panel-content">
                 <p>Ask Tam</p>

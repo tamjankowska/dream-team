@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 * {
     font-family: "Arvo", sans-serif;
 }
@@ -90,4 +90,10 @@ nav {
 
 .single-faq {
     margin: 3%;
+}
+
+.nav-header {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    padding: 2%;
 }

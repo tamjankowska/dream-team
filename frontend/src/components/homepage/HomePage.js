@@ -38,7 +38,7 @@ class HomePage extends Component {
         {(!sessionStorage.getItem('loggedIn')) ? <div><h1 className="title">You are not logged in</h1><Landing /></div> :
           <div>
             <GamesCarousel />
-            <button onClick={this.getDetails}>Click</button>
+          
             {this.state.buttonClicked ? this.state.gameData.map((data) => {
                   return (
                     <React.Fragment>
