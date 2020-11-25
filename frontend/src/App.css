@@ -1,5 +1,6 @@
 .navbar {
-    max-width: 1903px;
+    /* max-width: 1903px; */
+    width: 100%;
     position: relative;
 }
 
@@ -7,4 +8,11 @@
     .navbar{
         max-width: 958px;
     }
+}
+
+a {
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
 }

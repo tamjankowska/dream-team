@@ -9,7 +9,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1903px;
     height: 200px;
     color: white;
 
@@ -61,14 +60,17 @@ nav {
 }
 
 .nav-user-img {
-    margin: 8% 2% 1% 2%;
+    margin-top: 15%;
     width: 4vw;
-    height: 10vh;
+    height: 70%;
 }
 
 .username-text {
+    position: relative;
     margin: 1% 1% 0% 1%;
     font-size: 28px;
+    left: 26%;
+    text-transform: capitalize;
 }
 
 .links {
