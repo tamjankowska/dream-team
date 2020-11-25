@@ -110,9 +110,23 @@ router.get('/game/:id', (req, res) => {
         } else {
             const rs = await Promise.all(reviews.map(async (review) => {
                 const user = await User.findOne({ _id: review.reviewer }).exec();
-                return {review, username: user.username}
+                const ratings = await Game.findOne({_id: review.gameID}).exec();
+                return {review, 
+                    username: user.username, 
+                    ageRating: ratings.ageRating,
+                    violence: ratings.violence,
+                    sexAndNudity: ratings.sexAndNudity,
+                    alcoholAndDrugs: ratings.alcoholAndDrugs,
+                    gambling: ratings.gambling,
+                    explicitLanguage: ratings.explicitLanguage,
+                    category: ratings.category
+                }
             }));
-            res.status(200).json({status: 'OK', username: rs.user, reviews: rs});
+            res.status(200).json({status: 'OK', 
+                                username: rs.user, 
+                                reviews: rs,
+                                ratings: rs.ratings
+                            });
         }
     });
 });

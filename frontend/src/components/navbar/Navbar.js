@@ -12,7 +12,7 @@ const Navbar = () => {
                 <a href='/home'>
                     <img className="logo" src={Eggicorn} alt="logo" />
                 </a>
-                <p>Video Game review site for uninformed parents</p>
+                <p className = 'nav-header'>Video Game review site for uninformed parents</p>
                 <Dropdown />
             </div>
             <div className="user-signout-container">
