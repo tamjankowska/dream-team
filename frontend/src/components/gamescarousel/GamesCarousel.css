@@ -18,6 +18,11 @@
 .carousel-caption {
     background-color: #00000088;
 }
+
+.carousel-caption :hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
 .column {
     margin: 4% 2% -2% 5%;
 }
